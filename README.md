@@ -71,16 +71,16 @@ have opposite proprieties.
 K will be used and therefore must be given here. 
 2. Add signals to the input, i.e., build signals that are composed of different ones.
 
-´´´
+```
 sg = BaseSignal(N, K, maxFreq, minFreq, maxAmp)
 x = sg.addSignal('sinusoidal')
-´´´
+```
 
 3. Build base compression object.
 4. Sample signal
 5. Compress signal
 
-´´´
+```
 cs = CompressedSensing(x, M)
 
 randomMatrix = 'bernoulli'
@@ -91,12 +91,12 @@ psi = cs.compression(basis)
 
 y = phi @ x
 theta = phi @ psi
-´´´
+```
 
 6. Build Reconstruction object
 7. Reconstruct
 
-´´´
+```
 r = Reconstruction(theta, y, x, basis)
 s, xrec = r.reconstruct('omp')
-´´´
+```
